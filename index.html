@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<!-- このページを誰がどのように作ったのか気になるのですか？
+		このページは、鷲尾諒が作成した2024年用年賀Webページです。
+		このページは、鷲尾諒が作成した2024年用年賀Webページです。
+		このページは、鷲尾諒が作成した2024年用年賀Webページです。
+		このページは、鷲尾諒が作成した2024年用年賀Webページです。
+		このページは、鷲尾諒が作成した2024年用年賀Webページです。
+		このページは、鷲尾諒が作成した2024年用年賀Webページです。
+		このページは、鷲尾諒が作成した2024年用年賀Webページです。
+		このページは、鷲尾諒が作成した2024年用年賀Webページです。
+		このページは、鷲尾諒が作成した2024年用年賀Webページです。 -->
+
+<html lang="ja" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+
+		<title>2024年 年賀Webページ</title>
+
+		<script type="module">
+			document.documentElement.classList.remove('no-js');
+			document.documentElement.classList.add('js');
+		</script>
+		<!-- さわらびフォント -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic"
+			rel="stylesheet" />
+		<link rel="stylesheet" href="/assets/css/styles.css" />
+		<style>
+			@keyframes floatAnimation {
+				0% {
+					transform: translateX(-50%) translateY(-50%);
+				}
+				50% {
+					transform: translateX(-50%) translateY(-55%);
+				}
+				100% {
+					transform: translateX(-50%) translateY(-50%);
+				}
+			}
+			:root {
+				--color-primary: #ffbe98; /* メインカラー : PANTONE 13-1023 Peach Fuzz https://coliss.com/articles/build-websites/operation/design/color-of-the-year-2024.html */
+				--color-secondary: #0cca4a; /* サブカラー : Dark Pastel Green */
+				--color-tertiary: #8de969; /* サブカラー : Light Green */
+				--color-quaternary: #dbf9f4; /* サブカラー : Mint Green */
+				--red: #ee4266; /* Red(Crayola) */
+				--red-secondary: #ba1200; /* Engineering Orange */
+				--black: #040303;
+				--gray: #5d737e;
+			}
+			*,
+			*:before,
+			*:after {
+				font-family: 'Sawarabi Gothic';
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+			a {
+				text-decoration: none;
+			}
+			ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+			}
+			img {
+				pointer-events: none;
+			}
+			body {
+				margin: 0;
+				padding: 0;
+				background-color: var(--color-quaternary);
+				color: var(--black);
+			}
+			#main-content {
+				height: 90vh;
+				padding: 20px;
+				text-align: center;
+				position: relative;
+			}
+			#main-image {
+				position: absolute;
+				top: 40%;
+				left: 50%;
+				transform: translate(-50% -50%);
+			}
+			.floating {
+				animation: floatAnimation 3s ease-in-out infinite;
+			}
+			.new-year-greeting {
+				position: absolute;
+				writing-mode: vertical-rl;
+				font-size: 48px;
+				color: gold;
+			}
+			#greeting-right {
+				right: 0;
+			}
+			#greeting-left {
+				left: 0;
+			}
+			footer {
+				background-color: var(--color-primary);
+				color: var(--color-quaternary);
+				text-align: center;
+				padding: 10px 0;
+				position: fixed;
+				bottom: 0;
+				width: 100%;
+			}
+		</style>
+
+		<meta
+			name="description"
+			content="このページは、鷲尾諒が作成した2024年用年賀Webページです。" />
+		<meta
+			property="og:title"
+			content="2024年 年賀Webページ" />
+		<meta
+			property="og:description"
+			content="このページは、鷲尾諒が作成した2024年用年賀Webページです。" />
+		<meta property="og:image" content="image.png" />
+		<meta
+			property="og:image:alt"
+			content="太陽を背にした竜の画像" />
+		<meta property="og:locale" content="ja_JP" />
+		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary" />
+		<meta
+			property="og:url"
+			content="https://mywebsite.com/page" />
+		<link
+			rel="canonical"
+			href="https://mywebsite.com/page" />
+
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="theme-color" content="#ffbe98" />
+	</head>
+
+	<body>
+		<div id="main-content">
+			<img
+				id="main-image"
+				class="floating"
+				src="dragon_tmp.png"
+				alt="dragon" />
+			<div class="new-year-greeting" id="greeting-right">
+				<!-- 謹賀新年 -->
+			</div>
+			<div class="new-year-greeting" id="greeting-left">
+				<!-- 二〇二四　甲辰 -->
+			</div>
+		</div>
+		<!-- フッター -->
+		<footer class="footer">
+			<div class="footer__inner">
+				<div class="footer__logo">
+					<a href="https://www.washio.dev/">
+						<img
+							src="/assets/img/logo.svg"
+							alt="鷲尾諒のロゴ" />
+					</a>
+				</div>
+
+				<div class="footer__links">
+					<ul class="footer__links-list">
+						<li class="footer__links-item">
+							<a
+								href="https://www.washio.dev/"
+								class="footer__links-link"
+								>鷲尾諒のポートフォリオ</a
+							>
+						</li>
+						<li class="footer__links-item">
+							<a
+								href="https://www.washio.dev/blog/"
+								class="footer__links-link"
+								>鷲尾諒のブログ</a
+							>
+						</li>
+						<li class="footer__links-item">
+							<a
+								href="https://www.washio.dev/about/"
+								class="footer__links-link"
+								>鷲尾諒について</a
+							>
+						</li>
+					</ul>
+				</div>
+
+				<div class="footer__copy">
+					<p class="footer__copy-text">© 2024 鷲尾諒</p>
+				</div>
+			</div>
+			<script
+				src="/assets/js/xy-polyfill.js"
+				nomodule></script>
+			<script
+				src="/assets/js/script.js"
+				type="module"></script>
+		</footer>
+
+		<script>
+			function animateText(text, id, callback) {
+				let container = document.getElementById(id);
+				let textArray = text.split('');
+				let index = 0;
+
+				function addChar() {
+					if (index < textArray.length) {
+						container.innerHTML += textArray[index++];
+						setTimeout(addChar, 1000);
+					} else {
+						callback(); // コールバック関数を呼び出す
+					}
+				}
+				addChar();
+			}
+
+			animateText(
+				'謹賀新年',
+				'greeting-right',
+				function () {
+					animateText('二〇二四　甲辰歳', 'greeting-left');
+				}
+			);
+		</script>
+	</body>
+</html>
