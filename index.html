@@ -26,19 +26,57 @@
 		<link
 			href="https://fonts.googleapis.com/css?family=Sawarabi+Gothic"
 			rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Sawarabi+Mincho"
+			rel="stylesheet" />
 		<link rel="stylesheet" href="/assets/css/styles.css" />
 		<style>
 			@keyframes floatAnimation {
 				0% {
+					opacity: 1;
 					transform: translateX(-50%) translateY(-50%);
 				}
 				50% {
+					opacity: 1;
 					transform: translateX(-50%) translateY(-55%);
 				}
 				100% {
+					opacity: 1;
 					transform: translateX(-50%) translateY(-50%);
 				}
 			}
+
+			@keyframes changeImgAnimation {
+				0% {
+					opacity: 0;
+				}
+				50% {
+					opacity: 1;
+				}
+				100% {
+					opacity: 0;
+				}
+			}
+
+			@keyframes typewriter {
+				/*タイプライターライクなアニメーション*/
+				from {
+					width: 0;
+				}
+				to {
+					width: 24em;
+				}
+			}
+			@keyframes blinkTextCursor {
+				/*点滅するカーソルのアニメーション*/
+				from {
+					border-right-color: rgba(0, 0, 0, 0.75);
+				}
+				to {
+					border-right-color: transparent;
+				}
+			}
+
 			:root {
 				--color-primary: #ffbe98; /* メインカラー : PANTONE 13-1023 Peach Fuzz https://coliss.com/articles/build-websites/operation/design/color-of-the-year-2024.html */
 				--color-secondary: #0cca4a; /* サブカラー : Dark Pastel Green */
@@ -68,7 +106,8 @@
 				pointer-events: none;
 			}
 			body {
-				margin: 0;
+				width: fit-content;
+				margin: 0 auto;
 				padding: 0;
 				background-color: var(--color-quaternary);
 				color: var(--black);
@@ -78,34 +117,90 @@
 				padding: 20px;
 				text-align: center;
 				position: relative;
+				aspect-ratio: 1 / 1.5;
+				margin: 0 auto;
+				background-color: white;
 			}
 			#main-image {
 				position: absolute;
 				top: 40%;
 				left: 50%;
-				transform: translate(-50% -50%);
+				transform: translateX(-50%) translateY(-50%);
+				opacity: 0;
 			}
+			.image {
+				position: absolute;
+				top: 40%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				animation: changeImgAnimation 2s ease-in-out;
+				opacity: 0;
+			}
+
+			.image:nth-of-type(1) {
+				animation-delay: 10s;
+			}
+
 			.floating {
 				animation: floatAnimation 3s ease-in-out infinite;
+				animation-delay: 13s;
 			}
 			.new-year-greeting {
 				position: absolute;
 				writing-mode: vertical-rl;
-				font-size: 48px;
+				font-size: 56px;
+				font-family: '游明朝 Medium', serif;
 				color: gold;
+				letter-spacing: 0.3em;
+				text-shadow: 5px 5px 5px var(--black);
 			}
 			#greeting-right {
-				right: 0;
+				right: 5%;
 			}
 			#greeting-left {
-				left: 0;
+				left: 5%;
 			}
+			#greeting-bottom {
+				position: absolute;
+				bottom: 5%;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.line {
+				/*対象のテキスト*/
+				position: relative;
+				margin: 0 auto;
+				text-align: center;
+				white-space: nowrap;
+				overflow: hidden;
+				transform: translateY(-50%);
+			}
+
+			.line:nth-of-type(1) {
+				animation-delay: 14s;
+			}
+
+			.line:nth-of-type(2) {
+				animation-delay: 17s;
+			}
+
+			.line:nth-of-type(3) {
+				animation-delay: 21s;
+			}
+
+			.typewriter {
+				/*アニメーションセッティング*/
+				animation: typewriter 5s steps(44) 1 normal both,
+					blinkTextCursor 1s steps(22) 50 normal;
+			}
+
 			footer {
 				background-color: var(--color-primary);
 				color: var(--color-quaternary);
 				text-align: center;
 				padding: 10px 0;
-				position: fixed;
+				position: relative;
 				bottom: 0;
 				width: 100%;
 			}
@@ -140,29 +235,31 @@
 
 	<body>
 		<div id="main-content">
+			<img class="image" src="usagi.png" alt="usagi" />
 			<img
 				id="main-image"
 				class="floating"
 				src="dragon_tmp.png"
 				alt="dragon" />
-			<div class="new-year-greeting" id="greeting-right">
+			<div id="greeting-right" class="new-year-greeting">
 				<!-- 謹賀新年 -->
 			</div>
-			<div class="new-year-greeting" id="greeting-left">
+			<div id="greeting-left" class="new-year-greeting">
 				<!-- 二〇二四　甲辰 -->
+			</div>
+			<div id="greeting-bottom">
+				<p class="line typewriter">
+					旧年中はお世話になりました
+				</p>
+				<p class="line typewriter">
+					本年もよろしくお願いいたします
+				</p>
+				<p class="line typewriter">鷲尾諒</p>
 			</div>
 		</div>
 		<!-- フッター -->
 		<footer class="footer">
 			<div class="footer__inner">
-				<div class="footer__logo">
-					<a href="https://www.washio.dev/">
-						<img
-							src="/assets/img/logo.svg"
-							alt="鷲尾諒のロゴ" />
-					</a>
-				</div>
-
 				<div class="footer__links">
 					<ul class="footer__links-list">
 						<li class="footer__links-item">
