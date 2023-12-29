@@ -33,16 +33,22 @@
 		<style>
 			@keyframes floatAnimation {
 				0% {
-					opacity: 1;
 					transform: translateX(-50%) translateY(-50%);
 				}
 				50% {
-					opacity: 1;
 					transform: translateX(-50%) translateY(-55%);
 				}
 				100% {
-					opacity: 1;
 					transform: translateX(-50%) translateY(-50%);
+				}
+			}
+
+			@keyframes appearAnimation {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
 				}
 			}
 
@@ -119,16 +125,24 @@
 				position: relative;
 				aspect-ratio: 1 / 1.5;
 				margin: 0 auto;
+				background-image: url('background.jpg');
+				background-size: cover;
+				background-repeat: no-repeat;
 				background-color: white;
 			}
 			#main-image {
+				/* 画像の大きさを指定 */
+				width: 80%;
 				position: absolute;
 				top: 40%;
 				left: 50%;
 				transform: translateX(-50%) translateY(-50%);
 				opacity: 0;
+				animation: appearAnimation 2s ease-in-out forwards,
+					floatAnimation 3s ease-in-out infinite;
+				animation-delay: 13s;
 			}
-			.image {
+			.temp-image {
 				position: absolute;
 				top: 40%;
 				left: 50%;
@@ -137,14 +151,10 @@
 				opacity: 0;
 			}
 
-			.image:nth-of-type(1) {
+			.temp-image:nth-of-type(1) {
 				animation-delay: 10s;
 			}
 
-			.floating {
-				animation: floatAnimation 3s ease-in-out infinite;
-				animation-delay: 13s;
-			}
 			.new-year-greeting {
 				position: absolute;
 				writing-mode: vertical-rl;
@@ -155,6 +165,7 @@
 				text-shadow: 5px 5px 5px var(--black);
 			}
 			#greeting-right {
+				font-size: 72px;
 				right: 5%;
 			}
 			#greeting-left {
@@ -164,17 +175,34 @@
 				position: absolute;
 				bottom: 5%;
 				left: 50%;
+				z-index: 20;
 				transform: translateX(-50%);
 			}
 
+			#bottom-image {
+				position: absolute;
+				width: 100%;
+				height: auto;
+				opacity: 0;
+				bottom: -3%;
+				z-index: 10;
+				transform: translateX(-50%);
+				animation: appearAnimation 5s ease-in-out forwards;
+				animation-delay: 3s;
+			}
+
 			.line {
-				/*対象のテキスト*/
 				position: relative;
 				margin: 0 auto;
 				text-align: center;
 				white-space: nowrap;
 				overflow: hidden;
 				transform: translateY(-50%);
+				/* フォントの影を指定 */
+				text-shadow: 4px 4px 4px #fff, -4px -4px 4px #fff,
+					-4px 4px 4px #fff, 4px -4px 4px #fff,
+					4px 0 4px #fff, -4px 0 4px #fff, 0 4px 4px #fff,
+					0 -4px 4px #fff;
 			}
 
 			.line:nth-of-type(1) {
@@ -196,8 +224,8 @@
 			}
 
 			footer {
-				background-color: var(--color-primary);
-				color: var(--color-quaternary);
+				background-color: transparent;
+				color: var(--color-primary);
 				text-align: center;
 				padding: 10px 0;
 				position: relative;
@@ -235,10 +263,9 @@
 
 	<body>
 		<div id="main-content">
-			<img class="image" src="usagi.png" alt="usagi" />
+			<img class="temp-image" src="usagi.png" alt="usagi" />
 			<img
 				id="main-image"
-				class="floating"
 				src="dragon_tmp.png"
 				alt="dragon" />
 			<div id="greeting-right" class="new-year-greeting">
@@ -254,35 +281,19 @@
 				<p class="line typewriter">
 					本年もよろしくお願いいたします
 				</p>
+				<br />
 				<p class="line typewriter">鷲尾諒</p>
 			</div>
+			<img src="fuji.png" alt="Mt.fuji" id="bottom-image" />
 		</div>
 		<!-- フッター -->
 		<footer class="footer">
 			<div class="footer__inner">
 				<div class="footer__links">
 					<ul class="footer__links-list">
-						<li class="footer__links-item">
-							<a
-								href="https://www.washio.dev/"
-								class="footer__links-link"
-								>鷲尾諒のポートフォリオ</a
-							>
-						</li>
-						<li class="footer__links-item">
-							<a
-								href="https://www.washio.dev/blog/"
-								class="footer__links-link"
-								>鷲尾諒のブログ</a
-							>
-						</li>
-						<li class="footer__links-item">
-							<a
-								href="https://www.washio.dev/about/"
-								class="footer__links-link"
-								>鷲尾諒について</a
-							>
-						</li>
+						<li class="footer__links-item"></li>
+						<li class="footer__links-item"></li>
+						<li class="footer__links-item"></li>
 					</ul>
 				</div>
 
