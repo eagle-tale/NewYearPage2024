@@ -97,6 +97,7 @@
 			*:before,
 			*:after {
 				font-family: 'Sawarabi Gothic';
+				font-size: 1em;
 				-webkit-box-sizing: border-box;
 				box-sizing: border-box;
 			}
@@ -143,11 +144,13 @@
 				animation-delay: 13s;
 			}
 			.temp-image {
+				/* 画像の大きさを指定 */
+				width: 80%;
 				position: absolute;
 				top: 40%;
 				left: 50%;
 				transform: translateX(-50%) translateY(-50%);
-				animation: changeImgAnimation 2s ease-in-out;
+				animation: changeImgAnimation 3s ease-in-out;
 				opacity: 0;
 			}
 
@@ -158,14 +161,23 @@
 			.new-year-greeting {
 				position: absolute;
 				writing-mode: vertical-rl;
-				font-size: 56px;
 				font-family: '游明朝 Medium', serif;
+				font-size: clamp(
+					1rem,
+					calc(1.5rem + 0.625vw),
+					2.4rem
+				);
+				font-style: italic;
 				color: gold;
 				letter-spacing: 0.3em;
 				text-shadow: 5px 5px 5px var(--black);
 			}
 			#greeting-right {
-				font-size: 72px;
+				font-size: clamp(
+					3.5rem,
+					calc(2rem + 0.625vw),
+					4rem
+				);
 				right: 5%;
 			}
 			#greeting-left {
@@ -206,15 +218,15 @@
 			}
 
 			.line:nth-of-type(1) {
-				animation-delay: 14s;
+				animation-delay: 15s;
 			}
 
 			.line:nth-of-type(2) {
-				animation-delay: 17s;
+				animation-delay: 18s;
 			}
 
 			.line:nth-of-type(3) {
-				animation-delay: 21s;
+				animation-delay: 22s;
 			}
 
 			.typewriter {
@@ -289,14 +301,13 @@
 		<!-- フッター -->
 		<footer class="footer">
 			<div class="footer__inner">
-				<div class="footer__links">
+				<!-- <div class="footer__links">
 					<ul class="footer__links-list">
 						<li class="footer__links-item"></li>
 						<li class="footer__links-item"></li>
 						<li class="footer__links-item"></li>
 					</ul>
-				</div>
-
+				</div> -->
 				<div class="footer__copy">
 					<p class="footer__copy-text">© 2024 鷲尾諒</p>
 				</div>
