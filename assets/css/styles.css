@@ -1,246 +1,250 @@
 :root {
-				--color-primary: #ffbe98; /* メインカラー : PANTONE 13-1023 Peach Fuzz https://coliss.com/articles/build-websites/operation/design/color-of-the-year-2024.html */
-				--color-secondary: #0cca4a; /* サブカラー : Dark Pastel Green */
-				--color-tertiary: #8de969; /* サブカラー : Light Green */
-				--color-quaternary: #dbf9f4; /* サブカラー : Mint Green */
-				--red: #ee4266; /* Red(Crayola) */
-				--red-secondary: #ba1200; /* Engineering Orange */
-				--black: #040303;
-				--gray: #5d737e;
-			}
+  --color-primary: #ffbe98; /* メインカラー : PANTONE 13-1023 Peach Fuzz https://coliss.com/articles/build-websites/operation/design/color-of-the-year-2024.html */
+  --color-secondary: #0cca4a; /* サブカラー : Dark Pastel Green */
+  --color-tertiary: #8de969; /* サブカラー : Light Green */
+  --color-quaternary: #dbf9f4; /* サブカラー : Mint Green */
+  --red: #ee4266; /* Red(Crayola) */
+  --red-secondary: #ba1200; /* Engineering Orange */
+  --black: #040303;
+  --gray: #5d737e;
+}
 
-			*,
-			*:before,
-			*:after {
-				font-family: 'Sawarabi Gothic';
-				font-size: 1em;
-				-webkit-box-sizing: border-box;
-				box-sizing: border-box;
-			}
-			body {
-				width: fit-content;
-				margin: 0 auto;
-				padding: 10px 10px 0 10px;
-				background-color: var(--color-quaternary);
-				color: var(--black);
-			}
-			a {
-				text-decoration: none;
-			}
-			ul {
-				list-style: none;
-				padding: 0;
-				margin: 0;
-			}
-			img {
-				pointer-events: none;
-			}
+*,
+*:before,
+*:after {
+  font-family: 'Sawarabi Gothic';
+  font-size: 1em;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px 10px 0 10px;
+  background-color: var(--color-quaternary);
+  color: var(--black);
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+img {
+  pointer-events: none;
+}
 
-			.main-background {
-				position: relative;
-				height: 90vh;
-				background-color: white;
-			}
+#main-content {
+  height: 90vh;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  aspect-ratio: 1 / 1.5;
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: #fff 10px solid;
+  animation: fadeIn 2s ease-out 0s 1 normal backwards;
+}
+@keyframes fadeIn {
+  0% {
+  transform: translateX(-300%) translateY(-300%);
+  }
 
-			#main-content {
-				height: 90vh;
-				padding: 20px;
-				text-align: center;
-				position: relative;
-				aspect-ratio: 1 / 1.5;
-				background-image: url('../img/background.jpg');
-				background-size: cover;
-				background-repeat: no-repeat;
-        border: #fff 10px solid;
-			}
-			#main-image {
-				/* 画像の大きさを指定 */
-				width: 80%;
-				position: absolute;
-				top: 40%;
-				left: 50%;
-				transform: translateX(-50%) translateY(-50%);
-				opacity: 0;
-				animation: appearAnimation 2s ease-in-out forwards,
-					floatAnimation 3s ease-in-out infinite;
-				animation-delay: 5s;
-			}
+  100% {
+  transform: translateX(0%) translateY(0%);
+  }
+  }
 
-			.temp-image {
-				/* 画像の大きさを指定 */
-				width: 80%;
-				position: absolute;
-				top: 40%;
-				left: 50%;
-				transform: translateX(-50%) translateY(-50%);
-				animation: changeImgAnimation 3s ease-in-out;
-				opacity: 0;
-			}
 
-			.temp-image:nth-of-type(1) {
-				animation-delay: 1s;
-			}
+#main-image {
+  /* 画像の大きさを指定 */
+  width: 80%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  opacity: 0;
+  animation: appearAnimation 2s ease-in-out forwards,
+    floatAnimation 3s ease-in-out infinite;
+  animation-delay: 6s;
+}
 
-			.new-year-greeting {
-				position: absolute;
-				writing-mode: vertical-rl;
-				font-family: '游明朝 Medium', serif;
-				font-size: clamp(
-					1.8rem,
-					calc(1.8rem + 0.625vw),
-					2.4rem
-				);
-				color: gold;
-				letter-spacing: 0.3em;
-        font-style: italic;
-			}
-			#greeting-right {
-				font-size: clamp(
-          3.5rem,
-					calc(2rem + 0.625vw),
-					4rem
-          );
-        text-shadow: 5px 5px 5px var(--black);
-				right: 5%;
-			}
-			div#greeting-left {
-        /* 太文字 */
-        font-weight: bold;
-        left: 5%;
-        /* 配下の要素を縦並び */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        text-shadow: 2px 2px 5px var(--black);
-      }
+.temp-image {
+  /* 画像の大きさを指定 */
+  width: 80%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  animation: changeImgAnimation 2s ease-in-out;
+  animation-delay: 3s;
+  opacity: 0;
+}
 
-			#greeting-bottom {
-				position: absolute;
-				bottom: 5%;
-				left: 50%;
-				z-index: 20;
-				transform: translateX(-50%);
-			}
+.new-year-greeting {
+  position: absolute;
+  writing-mode: vertical-rl;
+  font-family: '游明朝 Medium', serif;
+  font-size: clamp(
+    1.8rem,
+    calc(1.8rem + 0.625vw),
+    2.4rem
+  );
+  color: gold;
+  letter-spacing: 0.3em;
+  font-style: italic;
+}
+#greeting-right {
+  font-size: clamp(
+    3.5rem,
+    calc(2rem + 0.625vw),
+    4rem
+    );
+  text-shadow: 5px 5px 5px var(--black);
+  right: 5%;
+}
+div#greeting-left {
+  /* 太文字 */
+  font-weight: bold;
+  left: 5%;
+  /* 配下の要素を縦並び */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-shadow: 2px 2px 5px var(--black);
+}
 
-			#bottom-image {
-				position: absolute;
-				width: 100%;
-				height: auto;
-				opacity: 0;
-				bottom: -3%;
-				z-index: 10;
-				transform: translateX(-50%);
-				animation: appearAnimation 5s ease-in-out forwards;
-				animation-delay: 14s;
-			}
+#greeting-bottom {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  z-index: 20;
+  transform: translateX(-50%);
+}
 
-			.line {
-				position: relative;
-				margin: 0 auto;
-				text-align: center;
-				white-space: nowrap;
-				overflow: hidden;
-				transform: translateY(-50%);
-				/* フォントの影を指定 */
-				text-shadow: 4px 4px 4px #fff, -4px -4px 4px #fff,
-					-4px 4px 4px #fff, 4px -4px 4px #fff,
-					4px 0 4px #fff, -4px 0 4px #fff, 0 4px 4px #fff,
-					0 -4px 4px #fff;
-			}
+#bottom-image {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  bottom: -3%;
+  z-index: 10;
+  transform: translateX(-50%);
+  animation: appearAnimation 5s ease-in-out forwards;
+  animation-delay: 14s;
+}
 
-			.line:nth-of-type(1) {
-				animation-delay: 18s;
-			}
+.line {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+  /* フォントの影を指定 */
+  text-shadow: 4px 4px 4px #fff, -4px -4px 4px #fff,
+    -4px 4px 4px #fff, 4px -4px 4px #fff,
+    4px 0 4px #fff, -4px 0 4px #fff, 0 4px 4px #fff,
+    0 -4px 4px #fff;
+}
 
-			.line:nth-of-type(2) {
-				animation-delay: 21s;
-			}
+.line:nth-of-type(1) {
+  animation-delay: 18s;
+}
 
-			.line:nth-of-type(3) {
-				animation-delay: 23s;
-			}
+.line:nth-of-type(2) {
+  animation-delay: 21s;
+}
 
-			.line:nth-of-type(4) {
-				animation-delay: 26s;
-			}
+.line:nth-of-type(3) {
+  animation-delay: 23s;
+}
 
-			.typewriter {
-				/*アニメーションセッティング*/
-				animation: typewriter 5s steps(44) 1 normal both,
-					blinkTextCursor 1s steps(22) 50 normal;
-			}
+.line:nth-of-type(4) {
+  animation-delay: 26s;
+}
 
-			footer {
-				font-size: small;
-				background-color: transparent;
-				color: var(--color-primary);
-				text-align: center;
-				padding: 10px 0;
-				position: relative;
-				bottom: 0;
-				width: 100%;
-			}
+.typewriter {
+  /*アニメーションセッティング*/
+  animation: typewriter 5s steps(44) 1 normal both,
+    blinkTextCursor 1s steps(22) 50 normal;
+}
 
-			@keyframes floatAnimation {
-				0% {
-					transform: translateX(-50%) translateY(-50%);
-				}
-				50% {
-					transform: translateX(-50%) translateY(-55%);
-				}
-				100% {
-					transform: translateX(-50%) translateY(-50%);
-				}
-			}
+footer {
+  font-size: small;
+  background-color: transparent;
+  color: var(--color-primary);
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
 
-			@keyframes appearAnimation {
-				0% {
-					opacity: 0;
-				}
-				100% {
-					opacity: 1;
-				}
-			}
 
-			@keyframes changeImgAnimation {
-				0% {
-					opacity: 0;
-				}
-				50% {
-					opacity: 1;
-				}
-				100% {
-					opacity: 0;
-				}
-			}
+@keyframes floatAnimation {
+  0% {
+    transform: translateX(-50%) translateY(-50%);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-55%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%);
+  }
+}
 
-			@keyframes typewriter {
-				/*タイプライターライクなアニメーション*/
-				from {
-					width: 0;
-				}
-				to {
-					width: 24em;
-				}
-			}
-			@keyframes blinkTextCursor {
-				/*点滅するカーソルのアニメーション*/
-				from {
-					border-right-color: rgba(0, 0, 0, 0.75);
-				}
-				to {
-					border-right-color: transparent;
-				}
-			}
+@keyframes appearAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
-			@keyframes rotateAnimation {
-				0% {
-					transform: translateX(-50%) translateY(-50%)
-						rotate(0deg);
-				}
-				100% {
-					transform: translateX(-50%) translateY(-50%)
-						rotate(360deg);
-				}
-			}
+@keyframes changeImgAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes typewriter {
+  /*タイプライターライクなアニメーション*/
+  from {
+    width: 0;
+  }
+  to {
+    width: 24em;
+  }
+}
+@keyframes blinkTextCursor {
+  /*点滅するカーソルのアニメーション*/
+  from {
+    border-right-color: rgba(0, 0, 0, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: translateX(-50%) translateY(-50%)
+      rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%)
+      rotate(360deg);
+  }
+}
