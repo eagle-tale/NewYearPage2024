@@ -70,7 +70,7 @@
 					本年もよろしくお願いいたします
 				</p>
 				<p class="line typewriter">
-					あなたにとって良い年になりますように...!
+					良い年になりますように！
 				</p>
 				<br />
 				<p class="line typewriter">鷲尾諒</p>
@@ -111,6 +111,18 @@
 			setTimeout(function () {
 				animateText('謹賀新年', 'greeting-right');
 			}, 8000);
+
+			function actionButtonClicked() {
+				console.log('actionButtonClicked');
+				var tooltip = document.getElementById('tooltip');
+				if (tooltip.classList.contains('hidden')) {
+					tooltip.classList.remove('hidden');
+					tooltip.classList.add('visible');
+				} else {
+					tooltip.classList.remove('visible');
+					tooltip.classList.add('hidden');
+				}
+			}
 		</script>
 	</body>
 </html>
